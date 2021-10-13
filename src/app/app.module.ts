@@ -17,7 +17,7 @@ import { APIService } from './api.service';
   declarations: [
     AppComponent,
     WeatherComponent,
-    CountriesComponent
+    CountriesComponent,
   ],
   imports: [
     BrowserModule,

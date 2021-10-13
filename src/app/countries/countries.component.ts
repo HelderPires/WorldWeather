@@ -1,6 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subject, Subscription } from 'rxjs';
-import { Country } from '../types/countries';
+import { Component} from '@angular/core';
 import { APIService } from '../api.service';
 
 @Component({
