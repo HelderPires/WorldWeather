@@ -1,6 +1,9 @@
-<mat-list id="countries-page">
-  <mat-list-item *ngFor="let country of (countries | async)">
-    <p matLine>{{country.name}}</p>
-  </mat-list-item>
-</mat-list>
+<div id="countries-page">
+  <mat-list role="list">
+    <mat-list-item *ngFor="let country of (countries | async)">
+        <mat-card class="country-card" [routerLink]="['./weather/:country']">{{country.name}}</mat-card>
+    </mat-list-item>
+  </mat-list>
+</div>
+
 

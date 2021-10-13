@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 import {MatListModule} from '@angular/material/list';
+import {MatCardModule} from '@angular/material/card';
 
 import { WeatherComponent } from './weather/weather.component';
 import { CountriesComponent } from './countries/countries.component';
@@ -23,6 +24,7 @@ import { APIService } from './api.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatListModule,
+    MatCardModule,
     HttpClientModule
   ],
   providers: [APIService],
