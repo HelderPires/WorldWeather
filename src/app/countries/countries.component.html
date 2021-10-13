@@ -1,6 +1,6 @@
 <mat-list id="countries-page">
-  <mat-list-item *ngFor="let country of countries">
-    <p matLine>{{country}}</p>
+  <mat-list-item *ngFor="let country of (countries | async)">
+    <p matLine>{{country.name}}</p>
   </mat-list-item>
 </mat-list>
 
