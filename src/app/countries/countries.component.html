@@ -1,7 +1,7 @@
 <div id="countries-page">
   <mat-list role="list">
     <mat-list-item *ngFor="let country of (countries | async)">
-        <mat-card class="country-card" [routerLink]="['./weather/:country']">{{country.name}}</mat-card>
+        <mat-card class="country-card" [routerLink]="['../weather']" (click)="this.apiService.country = country">{{country.name}}</mat-card>
     </mat-list-item>
   </mat-list>
 </div>

@@ -5,7 +5,7 @@ import { CountriesComponent } from './countries/countries.component';
 
 const routes: Routes = [
   {
-    path: 'weather/:country',
+    path: 'weather',
     component: WeatherComponent,
   },
   {
@@ -15,7 +15,7 @@ const routes: Routes = [
 
   {
     path: '',
-    component: CountriesComponent,
+    redirectTo: "countries",
     pathMatch: 'full'
   },
 ];

@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Country } from './types/countries';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class APIService {
-
+  public country: any;
   constructor(private http: HttpClient) { }
 
   getCountries() {
@@ -15,10 +15,9 @@ export class APIService {
     const url = 'http://api.countrylayer.com/v2/all'; // After some attempts the URL provided to be broken. Removing HTTPS for HTTP fixes the call
     return this.http.get(url, {params: {'access_key': countryAPIKey}});
   }
-  parseCountryData(countryArray: Array<any>): Array<Country> {
-    return countryArray.map(country => ({'name': country.name, 'abbreviation':country.alpha2Code, 'capital': country.capital}));
-  }
-  getWeather(countryId: string) {
-    //TODO get Weather
-  }
+
+  getWeather(units: string = 'metric') {
+    const url = 'http://api.openweathermap.org/data/2.5/weather';
+    const APPID = '794ee95e63c5a32aaf88cd813fa2e425'
+    return this.http.get(url, {params: {'q': `${this.country.capital},${this.country.alpha2Code}`, 'APPID': APPID, units: units}})}
 }

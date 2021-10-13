@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 
@@ -25,6 +25,7 @@ import { APIService } from './api.service';
     BrowserAnimationsModule,
     MatListModule,
     MatCardModule,
+    MatSlideToggleModule,
     HttpClientModule
   ],
   providers: [APIService],

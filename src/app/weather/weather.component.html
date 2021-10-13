@@ -1,1 +1,21 @@
-<p>weather works!</p>
+<mat-card>
+  <mat-card-header class="header">
+    <p> Weather in: {{apiService.country.capital}}, {{apiService.country.name}} </p>
+    <div>
+      <mat-slide-toggle (change)="toggleUnits()">
+        Toggle units to {{isImperial? 'Metric': 'Imperial' }}
+      </mat-slide-toggle>
+    </div>
+  </mat-card-header>
+  <mat-card-content *ngIf="weather">
+    <p>Overview: {{weather.description}}</p>
+    <p>Temperature: {{weather.temperature}} {{isImperial? '&#8457;': '&deg;C'}}</p>
+    <p>Clouds %: {{weather.cloudPercentage}}</p>
+    <p>Wind Direction: {{weather.windDirection}} </p>
+    <p>Wind Speed: {{weather.windSpeed}} {{isImperial? 'miles/hour': 'meter/sec' }}</p>
+  </mat-card-content>
+  <!-- <mat-card-footer>
+    <button mat-button color="primary">Return</button>
+  </mat-card-footer> -->
+</mat-card>
+

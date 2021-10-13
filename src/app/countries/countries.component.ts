@@ -10,7 +10,7 @@ import { APIService } from '../api.service';
 })
 export class CountriesComponent {
   countries: any
-  constructor(private apiService: APIService) {
+  constructor(public apiService: APIService) {
     this.countries = this.apiService.getCountries()
    }
 }
